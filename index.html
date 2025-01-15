@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> NU Book Lounge</title>
+	  
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #E0F7FA; /* Light blue background */
+            color: #333;
+        }
+        .wrapper {
+            width: 100%;
+            max-width: 900px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style: none;
+            margin: 3;
+            padding: 3;
+            display: flex;
+        }
+        nav ul li {
+            flex: 1;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            background-color: black;
+        }
+        .container {
+            padding: 30px;
+        }
+        .book {
+            display: flex;
+            align-items: flex-start;
+            background-color: #f9f9f9;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .book img {
+            max-width: 120px;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+        .book-details {
+            flex: 1;
+        }
+        .book-title {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <NU Book Lounge</h1>
+			
+        </header>
+
+   
+        <div class="container" id="home">
+    
+        </div>
+
+        <div class="container" id="about">
+      
+            <p>NU Book Lounge offers a curated selection of books for readers of all ages. Whether you're into fiction, non-fiction, or mystery, we have something for everyone.</p>
+        </div>
+
+        <div class="container" id="search">
+          
+			        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About us</a></li>
+                <li><a href="#search">Donate books</a></li>
+                <li><a href="#contact">Contact us</a></li>
+            </ul>
+        </nav>
+		  <h1>NU Book Lounge</h1>
+		  <h2>Search for Books</h2>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search by title or author..." onkeyup="filterBooks()" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+
+            <div id="bookList">
+                   </div>
+				    <div class="book">
+                    <img src="book2.jpg" alt="To Kill a Mockingbird">
+                    <div class="book-details">
+                        <div class="book-title">Girl last seen</div>
+                        <p>by Lee va</p>
+                    </div>
+					<img src="book4.jpg" alt="To Kill a Mockingbird">
+                    <div class="book-details">
+                        <div class="book-title">To Kill a Mockingbird</div>
+                        <p>by Harper Lee</p>
+                </div>
+				
+					
+                </div>
+				    <div class="book">
+                    <img src="book3.jpg" alt="To Kill a Mockingbird">
+                    <div class="book-details">
+                        <div class="book-title">The brighter The Light</div>
+                        <p>by swang shen</p>
+                    </div>
+					<img src="book5.jpg" alt="To Kill a Mockingbird">
+                    <div class="book-details">
+                        <div class="book-title">To Kill a Mockingbird</div>
+                        <p>by Harper Lee</p>
+                </div> 
+				
+				      </div>
+				    <div class="book">
+                    <img src="book.6jpg" alt="To Kill a Mockingbird">
+                    <div class="book-details">
+                        <div class="book-title">To Kill a Mockingbird</div>
+                        <p>by Harper Lee</p>
+                    </div>
+					<img src="book7.jpg" alt="To Kill a Mockingbird">
+                    <div class="book-details">
+                        <div class="book-title">To Kill a Mockingbird</div>
+                        <p>by Harper Lee</p>
+                </div>
+				
+				
+            </div>
+        </div>
+
+        <div class="container" id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: info@simplebookstore.com</p>
+            <p>Phone: +1 123 456 7890</p>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Simple Bookstore. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function filterBooks() {
+            const searchInput = document.getElementById("searchInput").value.toLowerCase();
+            const books = document.querySelectorAll(".book");
+
+            books.forEach(book => {
+                const title = book.querySelector(".book-title").textContent.toLowerCase();
+                const author = book.querySelector("p").textContent.toLowerCase();
+
+                if (title.includes(searchInput) || author.includes(searchInput)) {
+                    book.style.display = "flex";
+                } else {
+                    book.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
